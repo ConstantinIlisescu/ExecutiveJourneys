@@ -1,0 +1,7 @@
+.home-hero-image {
+  background-image: url(/images/home-hero.jpg);
+}
+.hero-overlay {
+  background-color: rgba(var(--overlay-color), 0.39);
+}
+
