@@ -30,3 +30,7 @@
 .bg-dark {
   background-color: rgb(var(--dark-color));
 }
+
+.bg-call-to-action {
+  background-color: rgb(var(--call-to-action-color));
+}
