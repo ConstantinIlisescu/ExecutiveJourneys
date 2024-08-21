@@ -19,6 +19,14 @@
   color: rgb(var(--call-to-action-color));
 }
 
+.muted-text-dark {
+  color: rgba(var(--dark-paragraph-text), 0.4);
+}
+
+.muted-text-call-to-action {
+  color: rgba(var(--call-to-action-color), 0.4);
+}
+
 .bg-dark {
   background-color: rgb(var(--dark-color));
 }

@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./ServicesHero.css";
+
 const ServicesHero = () => {
   return (
     <section className="relative h-[60vh] bg-cover bg-center services-hero-image flex flex-col justify-between py-4">
