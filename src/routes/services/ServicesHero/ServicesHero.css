@@ -1,0 +1,6 @@
+.services-hero-image {
+  background-image: url(images/desktop/quote-hero-img.jpg);
+}
+.services-hero-overlay {
+  background-color: rgba(var(--overlay-color), 0.4);
+}
