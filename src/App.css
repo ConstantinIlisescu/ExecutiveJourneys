@@ -18,3 +18,7 @@
 .text-call-to-action {
   color: rgb(var(--call-to-action-color));
 }
+
+.bg-dark {
+  background-color: rgb(var(--dark-color));
+}

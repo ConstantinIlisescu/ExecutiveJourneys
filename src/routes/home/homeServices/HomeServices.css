@@ -1,0 +1,14 @@
+.round-corner-left-top {
+  border-top-left-radius: 100px;
+}
+
+.round-corner-left-bottom {
+  border-bottom-left-radius: 100px;
+}
+.round-corner-right-top {
+  border-top-right-radius: 100px;
+}
+
+.round-corner-right-bottom {
+  border-bottom-right-radius: 100px;
+}
