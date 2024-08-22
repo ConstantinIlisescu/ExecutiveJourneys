@@ -4,15 +4,17 @@ interface ServicesStepProp {
 
 const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
   return (
-    <div className="p-8 max-w-xl">
-      <h2 className="max-w-xs md:max-w-md text-2xl text-dark text-start playfair-display-medium mb-6">
+    <div className="p-8 max-w-xl space-y-6">
+      <h2 className="max-w-md text-2xl text-dark text-start playfair-display-medium">
         Welcome to our <span className="text-call-to-action">Quick Quote</span>{" "}
         form.
       </h2>
       <div
-        className={`mb-6 ${stepNumber === 1 ? "text-dark" : "muted-text-dark"}`}
+        className={`space-y-4 ${
+          stepNumber === 1 ? "text-dark" : "muted-text-dark"
+        }`}
       >
-        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium mb-6">
+        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">
           Step <span className="text-call-to-action">one</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
@@ -21,9 +23,11 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
         </p>
       </div>
       <div
-        className={`mb-6 ${stepNumber === 2 ? "text-dark" : "muted-text-dark"}`}
+        className={`space-y-4 ${
+          stepNumber === 2 ? "text-dark" : "muted-text-dark"
+        }`}
       >
-        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium mb-6 ">
+        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">
           Step <span className="text-call-to-action">two</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
@@ -32,9 +36,11 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
         </p>
       </div>
       <div
-        className={`mb-6 ${stepNumber === 3 ? "text-dark" : "muted-text-dark"}`}
+        className={`space-y-4 ${
+          stepNumber === 3 ? "text-dark" : "muted-text-dark"
+        }`}
       >
-        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium mb-6">
+        <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">
           Step <span className="text-call-to-action">three</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
