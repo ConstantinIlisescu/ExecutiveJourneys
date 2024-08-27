@@ -1,101 +1,16 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { Progress } from "@/components/ui/progress";
 import "./ServicesForm.css";
+import { getValidationSchema } from "@/lib/formUtils";
+import { FORM_STEP_SCHEMA } from "@/constants/jsonForms";
+import { FormData, FormSchema } from "@/types/FormTypes";
+
 interface ServicesFormProp {
   stepNumber: number;
   setStepNumber: React.Dispatch<React.SetStateAction<number>>;
 }
-
-type FormData = {
-  firstName?: string;
-  lastName?: string;
-  bookingType?: "Personal" | "Business";
-  email?: string;
-  confirmEmail?: string;
-  contactNumber?: string;
-};
-
-type FormSchema = {
-  label: string;
-  placeholder?: string;
-  type: string;
-  validation: yup.AnySchema;
-  options?: string[];
-};
-
-const stepSchemas: { [key: number]: { [key: string]: FormSchema } } = {
-  1: {
-    firstName: {
-      label: "First Name",
-      placeholder: "Enter your first name",
-      type: "text",
-      validation: yup
-        .string()
-        .min(2, "First name must be at least 2 characters")
-        .required("First name is required"),
-    },
-    lastName: {
-      label: "Last Name",
-      placeholder: "Enter your last name",
-      type: "text",
-      validation: yup
-        .string()
-        .min(2, "Last name must be at least 2 characters")
-        .required("Last name is required"),
-    },
-    bookingType: {
-      label: "Booking Type",
-      type: "radio",
-      validation: yup
-        .string()
-        .oneOf(["Personal", "Business"])
-        .required("Booking type is required"),
-      options: ["Personal", "Business"],
-    },
-    email: {
-      label: "Email",
-      placeholder: "Enter your email",
-      type: "email",
-      validation: yup
-        .string()
-        .email("Invalid email")
-        .required("Email is required"),
-    },
-    confirmEmail: {
-      label: "Confirm Email",
-      placeholder: "Confirm your email",
-      type: "email",
-      validation: yup
-        .string()
-        .oneOf([yup.ref("email"), undefined], "Emails must match")
-        .required("Confirm email is required"),
-    },
-    contactNumber: {
-      label: "Contact Number",
-      placeholder: "Enter your contact number",
-      type: "tel",
-      validation: yup
-        .string()
-        .matches(/^(?:\+44|0)?(7\d{9})$/, "Invalid UK contact number")
-        .required("Contact number is required"),
-    },
-  },
-  // Add schemas for other steps as needed
-};
-
-const getValidationSchema = (step: number) => {
-  const schema = stepSchemas[step];
-  const validationSchema: { [key: string]: yup.AnySchema } = {};
-
-  Object.keys(schema).forEach((key) => {
-    validationSchema[key] = schema[key].validation;
-  });
-
-  return yup.object().shape(validationSchema);
-};
 
 const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   const {
@@ -168,7 +83,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   };
 
   return (
-    <div className="p-4 max-w-lg mx-auto">
+    <div className="p-4 w-96 max-w-lg mx-auto">
       <div>
         <h4 className="montserrat-medium text-xs text-dark">
           Step {stepNumber} of 3
@@ -176,15 +91,56 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
         <Progress value={stepNumber * 33} />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {Object.keys(stepSchemas[stepNumber]).map((key) =>
-          renderField(key, stepSchemas[stepNumber][key])
+        {Object.keys(FORM_STEP_SCHEMA[stepNumber]).map((key) =>
+          renderField(key, FORM_STEP_SCHEMA[stepNumber][key])
         )}
-        <button
-          type="submit"
-          className="button-bg-primary text-nowrap  px-10 py-3 rounded-full text-xl  shadow-lg h-fit"
-        >
-          {stepNumber === 3 ? "Submit" : "Next"}
-        </button>
+        <div className="flex flex-row justify-between">
+          <button
+            type="button"
+            onClick={() => setStepNumber(stepNumber - 1)}
+            className={` ${
+              stepNumber === 1 ? "button-bg-primary-muted" : "button-bg-primary"
+            } text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit`}
+            disabled={stepNumber === 1}
+          >
+            Back
+          </button>
+          <button
+            type="submit"
+            className="button-bg-primary text-nowrap  px-10 py-2 rounded-full text-xl  shadow-lg h-fit"
+          >
+            {stepNumber === 3 ? "Submit" : "Next"}
+          </button>
+        </div>
+
+        {/* {stepNumber !== 3 ? (
+          <div className="flex flex-row justify-between">
+            <button
+              onClick={() => setStepNumber(stepNumber - 1)}
+              className={` ${
+                stepNumber === 1
+                  ? "button-bg-primary-muted"
+                  : "button-bg-primary"
+              } text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit`}
+              disabled={stepNumber === 1}
+            >
+              Back
+            </button>
+            <button
+              onClick={() => setStepNumber(stepNumber + 1)}
+              className="button-bg-primary text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit"
+            >
+              Next
+            </button>
+          </div>
+        ) : (
+          <button
+            type="submit"
+            className="button-bg-primary text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit"
+          >
+            Submit
+          </button>
+        )} */}
       </form>
     </div>
   );

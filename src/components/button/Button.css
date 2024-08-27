@@ -6,3 +6,8 @@
 .button-bg-primary:hover {
   background-color: rgba(var(--call-to-action-color));
 }
+
+.button-bg-primary-muted {
+  background-color: rgba(var(--call-to-action-color), 0.5);
+  color: rgb(var(--light-color));
+}

@@ -5,6 +5,8 @@ import ServicesForm from "./servicesForm/ServicesForm";
 
 const Services = () => {
   const [stepNumber, setStepNumber] = useState<number>(1);
+  console.log(stepNumber);
+
   return (
     <>
       <ServicesHero />
