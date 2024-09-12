@@ -5,13 +5,13 @@ interface ServicesStepProp {
 const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
   return (
     <div className="p-8 max-w-xl space-y-6">
-      <h2 className="max-w-md text-2xl text-dark text-start playfair-display-medium">
+      <h2 className="max-w-md text-2xl text-light text-start playfair-display-medium">
         Welcome to our <span className="text-call-to-action">Quick Quote</span>{" "}
         form.
       </h2>
       <div
         className={`space-y-4 ${
-          stepNumber === 1 ? "text-dark" : "muted-text-dark"
+          stepNumber === 1 ? "text-light" : "muted-text-light"
         }`}
       >
         <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">
@@ -24,7 +24,7 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
       </div>
       <div
         className={`space-y-4 ${
-          stepNumber === 2 ? "text-dark" : "muted-text-dark"
+          stepNumber === 2 ? "text-light" : "muted-text-light"
         }`}
       >
         <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">
@@ -37,7 +37,7 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
       </div>
       <div
         className={`space-y-4 ${
-          stepNumber === 3 ? "text-dark" : "muted-text-dark"
+          stepNumber === 3 ? "text-light" : "muted-text-light"
         }`}
       >
         <h3 className="max-w-xs md:max-w-md text-xl text-start playfair-display-medium">

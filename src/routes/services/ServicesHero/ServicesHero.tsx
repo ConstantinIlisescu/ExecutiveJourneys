@@ -1,10 +1,14 @@
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./ServicesHero.css";
+import formHeroImg from "../../../../public/images/desktop/quote-hero-img.jpg";
 
 const ServicesHero = () => {
   return (
-    <section className="relative h-[60vh] bg-cover bg-center services-hero-image flex flex-col justify-between py-4">
+    <section
+      style={{ backgroundImage: `url(${formHeroImg})` }}
+      className="relative h-[60vh] bg-cover bg-center services-hero-image flex flex-col justify-between py-4"
+    >
       <div className="absolute inset-0 hero-overlay"></div>
       <Container className="relative z-10 ">
         <div className="flex justify-between align-middle items-center">

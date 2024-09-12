@@ -203,7 +203,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     >
       <div className="p-4 w-96 max-w-lg mx-auto">
         <div>
-          <h4 className="montserrat-medium text-xs text-dark">
+          <h4 className="montserrat-medium text-xs text-light">
             Step {stepNumber} of 3
           </h4>
           <Progress value={stepNumber * 33} />

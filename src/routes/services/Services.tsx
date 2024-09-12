@@ -8,13 +8,13 @@ const Services = () => {
   console.log(stepNumber);
 
   return (
-    <>
+    <div className="bg-dark text-light">
       <ServicesHero />
       <div className="flex flex-col md:flex-row w-fit mx-auto">
         <ServicesSteps stepNumber={stepNumber} />
         <ServicesForm stepNumber={stepNumber} setStepNumber={setStepNumber} />
       </div>
-    </>
+    </div>
   );
 };
 

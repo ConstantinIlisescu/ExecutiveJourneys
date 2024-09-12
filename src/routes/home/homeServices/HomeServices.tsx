@@ -1,15 +1,8 @@
-import Container from "@/components/ui/container";
 import "./HomeServices.css";
 
 const HomeServices = () => {
   return (
     <section className=" flex flex-col">
-      <Container className="flex justify-center">
-        <h2 className="text-2xl playfair-display-medium text-call-to-action p-10">
-          Your journey begins here…
-        </h2>
-      </Container>
-
       <div className=" bg-dark ">
         <div className="flex flex-col md:flex-row md:justify-end">
           <div className="flex flex-col mx-auto justify-center py-11 md:text-end max-w-xs text-light md:me-10">
@@ -31,14 +24,14 @@ const HomeServices = () => {
         </div>
       </div>
 
-      <div>
+      <div className="bg-light-dark">
         <div className="flex flex-col-reverse md:flex-row md:justify-start">
           <img
             src="images/desktop/business.jpg"
             alt=""
             className="md:w-[50vw] round-corner-right-top round-corner-right-bottom"
           />
-          <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-dark md:ms-10">
+          <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
               <span className="text-call-to-action">Business</span> chauffeurs
             </h3>
@@ -69,14 +62,14 @@ const HomeServices = () => {
         </div>
       </div>
 
-      <div>
+      <div className="bg-light-dark">
         <div className="flex flex-col-reverse md:flex-row md:justify-start">
           <img
             src="images/desktop/airport.png"
             alt=""
             className="md:w-[50vw] round-corner-right-top"
           />
-          <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-dark md:ms-10">
+          <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
               <span className="text-call-to-action">Airport</span> chauffeurs
             </h3>

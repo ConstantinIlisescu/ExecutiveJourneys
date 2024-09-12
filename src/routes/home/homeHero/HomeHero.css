@@ -1,6 +1,3 @@
-.home-hero-image {
-  background-image: url(images/desktop/hero-img.jpg);
-}
 .hero-overlay {
   background-color: rgba(var(--overlay-color), 0.4);
 }

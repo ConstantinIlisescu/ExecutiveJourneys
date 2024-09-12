@@ -2,6 +2,8 @@
   --call-to-action-color: 212, 175, 55;
   --light-color: 255, 255, 255;
   --dark-color: 28, 28, 28;
+  --light-dark-color: 38, 38, 38;
+  --light-dark-color-2: 114, 114, 114;
   --overlay-color: 0, 0, 0;
   --light-paragraph-text: 224, 224, 224;
   --dark-paragraph-text: 51, 51, 51;
@@ -23,12 +25,20 @@
   color: rgba(var(--dark-paragraph-text), 0.4);
 }
 
+.muted-text-light {
+  color: rgba(var(--light-paragraph-text), 0.2);
+}
+
 .muted-text-call-to-action {
   color: rgba(var(--call-to-action-color), 0.4);
 }
 
 .bg-dark {
   background-color: rgb(var(--dark-color));
+}
+
+.bg-light-dark {
+  background-color: rgb(var(--light-dark-color));
 }
 
 .bg-call-to-action {
