@@ -166,7 +166,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             )}
           </div>
         );
-      case "dropOf":
+      case "dropOff":
         return (
           <div className="mb-4" key={name}>
             <label className="block mb-2">{field.label}</label>
