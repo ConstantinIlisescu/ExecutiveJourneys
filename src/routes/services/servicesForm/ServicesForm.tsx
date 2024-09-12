@@ -106,10 +106,12 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       case "tel":
         return (
           <div className="mb-4" key={name}>
-            <label className="block mb-2">{field.label}</label>
+            <label className="block mb-2 ">{field.label}</label>
             <input
               {...register(name as keyof FormData)}
-              className="border p-2 w-full"
+              className={`rounded-lg p-2 w-full ${
+                name.length != 0 ? "text-dark" : ""
+              }`}
               placeholder={field.placeholder}
             />
             {errors[name as keyof FormData] && (
@@ -145,7 +147,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       case "pickup":
         return (
           <div className="mb-4" key={name}>
-            <label className="block mb-2">{field.label}</label>
+            <label className="block mb-2 ">{field.label}</label>
             <Autocomplete
               onLoad={(autocomplete) =>
                 (pickupAutocompleteRef.current = autocomplete)
@@ -154,7 +156,9 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             >
               <input
                 {...register(name as keyof FormData)}
-                className="border p-2 w-full"
+                className={`rounded-lg p-2 w-full ${
+                  name.length != 0 ? "text-dark" : ""
+                }`}
                 type="text"
                 placeholder={field.placeholder}
               />
@@ -169,7 +173,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       case "dropOff":
         return (
           <div className="mb-4" key={name}>
-            <label className="block mb-2">{field.label}</label>
+            <label className="block mb-2 ">{field.label}</label>
             <Autocomplete
               onLoad={(autocomplete) =>
                 (dropOffAutocompleteRef.current = autocomplete)
@@ -178,7 +182,9 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             >
               <input
                 {...register(name as keyof FormData)}
-                className="border p-2 w-full"
+                className={`rounded-lg p-2 w-full ${
+                  name.length != 0 ? "text-dark" : ""
+                }`}
                 type="text"
                 placeholder={field.placeholder}
               />
