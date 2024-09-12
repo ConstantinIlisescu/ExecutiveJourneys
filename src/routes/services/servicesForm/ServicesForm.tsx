@@ -6,11 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Progress } from "@/components/ui/progress";
 import "./ServicesForm.css";
-import {
-  calculateCost,
-  calculateDistance,
-  getValidationSchema,
-} from "@/lib/formUtils";
+import { calculateCost, getValidationSchema } from "@/lib/formUtils";
 import { FORM_STEP_SCHEMA } from "@/constants/jsonForms";
 import { FormData, FormSchema } from "@/types/FormTypes";
 
@@ -33,17 +29,36 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   });
 
   const [pickup, setPickup] = useState<Place | null>(null);
-  const [dropoff, setDropoff] = useState<Place | null>(null);
+  const [dropOff, setDropOff] = useState<Place | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
   // Refs to hold the Autocomplete instances
 
   useEffect(() => {
-    const distance = calculateDistance(pickup, dropoff);
-    console.log(distance);
+    calculateDistance();
+  }, [pickup, dropOff]);
 
-    setDistance(distance);
-    console.log("this was called");
-  }, [pickup, dropoff]);
+  const calculateDistance = () => {
+    if (pickup && dropOff) {
+      const service = new window.google.maps.DistanceMatrixService();
+      service.getDistanceMatrix(
+        {
+          origins: [pickup.formatted_address],
+          destinations: [dropOff.formatted_address],
+          travelMode: window.google.maps.TravelMode.DRIVING,
+        },
+        (response, status) => {
+          if (status === "OK" && response?.rows[0].elements[0].distance) {
+            const distanceInMeters =
+              response.rows[0].elements[0].distance.value;
+            const distanceInKm = distanceInMeters / 1000;
+            setDistance(Math.ceil(distanceInKm / 1.609)); // convert km in miles
+          } else {
+            console.error("Distance calculation failed:", status);
+          }
+        }
+      );
+    }
+  };
 
   let totalCost = null;
 
@@ -53,7 +68,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   const pickupAutocompleteRef = useRef<google.maps.places.Autocomplete | null>(
     null
   );
-  const dropoffAutocompleteRef = useRef<google.maps.places.Autocomplete | null>(
+  const dropOffAutocompleteRef = useRef<google.maps.places.Autocomplete | null>(
     null
   );
 
@@ -65,9 +80,9 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   };
 
   const handleDropoffPlaceChanged = () => {
-    const place = dropoffAutocompleteRef.current?.getPlace();
+    const place = dropOffAutocompleteRef.current?.getPlace();
     if (place && place.formatted_address) {
-      setDropoff({ formatted_address: place.formatted_address });
+      setDropOff({ formatted_address: place.formatted_address });
     }
   };
 
@@ -151,13 +166,13 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             )}
           </div>
         );
-      case "dropof":
+      case "dropOf":
         return (
           <div className="mb-4" key={name}>
             <label className="block mb-2">{field.label}</label>
             <Autocomplete
               onLoad={(autocomplete) =>
-                (dropoffAutocompleteRef.current = autocomplete)
+                (dropOffAutocompleteRef.current = autocomplete)
               }
               onPlaceChanged={handleDropoffPlaceChanged}
             >
@@ -179,8 +194,6 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
         return null;
     }
   };
-
-  console.log(distance);
 
   return (
     <LoadScript
@@ -219,40 +232,11 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
               {stepNumber === 3 ? "Submit" : "Next"}
             </button>
           </div>
-
-          {/* {stepNumber !== 3 ? (
-          <div className="flex flex-row justify-between">
-            <button
-              onClick={() => setStepNumber(stepNumber - 1)}
-              className={` ${
-                stepNumber === 1
-                  ? "button-bg-primary-muted"
-                  : "button-bg-primary"
-              } text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit`}
-              disabled={stepNumber === 1}
-            >
-              Back
-            </button>
-            <button
-              onClick={() => setStepNumber(stepNumber + 1)}
-              className="button-bg-primary text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit"
-            >
-              Next
-            </button>
-          </div>
-        ) : (
-          <button
-            type="submit"
-            className="button-bg-primary text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit"
-          >
-            Submit
-          </button>
-        )} */}
         </form>
         {distance !== null && (
           <>
-            <p>Approximate Distance: {distance.toFixed(2)} km</p>
-            {totalCost && <p>Estimated Cost: ${totalCost.toFixed(2)}</p>}
+            <p>Approximate Distance: {distance} miles</p>
+            {totalCost && <p>Estimated Cost: £{Math.ceil(totalCost)}</p>}
           </>
         )}
       </div>

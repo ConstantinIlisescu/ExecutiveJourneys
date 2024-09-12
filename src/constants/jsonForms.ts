@@ -65,19 +65,13 @@ export const FORM_STEP_SCHEMA: {
       label: "Where from",
       placeholder: "Enter your pick up address",
       type: "pickup",
-      validation: yup
-        .string()
-        .min(5, "Min 5 characters")
-        .required("Is required"),
+      validation: yup.string().required("Is required"),
     },
     whereFrom: {
-      label: "Where t0",
+      label: "Where to",
       placeholder: "Enter your destination address",
-      type: "dropof",
-      validation: yup
-        .string()
-        .min(5, "Min 5 characters")
-        .required("Is required"),
+      type: "dropOff",
+      validation: yup.string().required("Is required"),
     },
   },
   3: {
