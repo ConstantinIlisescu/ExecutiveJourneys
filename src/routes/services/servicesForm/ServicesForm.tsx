@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
-
-const libraries: "places"[] = ["places"]; // Required to enable Places API
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Progress } from "@/components/ui/progress";
@@ -9,6 +7,7 @@ import "./ServicesForm.css";
 import { calculateCost, getValidationSchema } from "@/lib/formUtils";
 import { FORM_STEP_SCHEMA } from "@/constants/jsonForms";
 import { FormData, FormSchema } from "@/types/FormTypes";
+import { GOOGLE_API_LIBRARIES } from "@/constants/googleApi";
 
 interface ServicesFormProp {
   stepNumber: number;
@@ -28,9 +27,11 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     resolver: yupResolver(getValidationSchema(stepNumber)),
   });
 
+  const [formData, setFormData] = useState<FormData | null>(null);
   const [pickup, setPickup] = useState<Place | null>(null);
   const [dropOff, setDropOff] = useState<Place | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+
   // Refs to hold the Autocomplete instances
 
   useEffect(() => {
@@ -50,8 +51,8 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
           if (status === "OK" && response?.rows[0].elements[0].distance) {
             const distanceInMeters =
               response.rows[0].elements[0].distance.value;
-            const distanceInKm = distanceInMeters / 1000;
-            setDistance(Math.ceil(distanceInKm / 1.609)); // convert km in miles
+            const distanceKm = distanceInMeters / 1000 / 1.609; // convert km in miles
+            setDistance(Math.ceil(distanceKm));
           } else {
             console.error("Distance calculation failed:", status);
           }
@@ -89,9 +90,11 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     if (stepNumber === 1) {
       console.log("Step 1 data:", data);
+      setFormData(data);
       setStepNumber(2); // Move to the next step
     } else if (stepNumber === 2) {
       console.log("Step 2 data:", data);
+      setFormData(data);
       setStepNumber(3); // Move to the final step
     } else {
       console.log("Final data:", data);
@@ -204,7 +207,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   return (
     <LoadScript
       googleMapsApiKey="AIzaSyBAY3CeUohHDliAMOZ0KLPE77qgmOv9Tr0"
-      libraries={libraries}
+      libraries={GOOGLE_API_LIBRARIES}
       loadingElement={<div>Loading...</div>}
     >
       <div className="p-4 w-96 max-w-lg mx-auto">
@@ -214,10 +217,37 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
           </h4>
           <Progress value={stepNumber * 33} />
         </div>
+        {stepNumber === 3 && formData && (
+          <div className="my-6">
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              {formData.firstName} {formData.lastName}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              {formData.email}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              {formData.contactNumber}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              {formData.whereFrom}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              {formData.whereTo}
+            </p>
+            {distance !== null && (
+              <>
+                <p>Approximate Distance: {distance} miles</p>
+                {totalCost && <p>Estimated Cost: £{Math.ceil(totalCost)}</p>}
+              </>
+            )}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          {Object.keys(FORM_STEP_SCHEMA[stepNumber]).map((key) =>
-            renderField(key, FORM_STEP_SCHEMA[stepNumber][key])
-          )}
+          {FORM_STEP_SCHEMA[stepNumber] &&
+            Object.keys(FORM_STEP_SCHEMA[stepNumber]).map((key) =>
+              renderField(key, FORM_STEP_SCHEMA[stepNumber][key])
+            )}
           <div className="flex flex-row justify-between">
             <button
               type="button"
@@ -239,12 +269,6 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             </button>
           </div>
         </form>
-        {distance !== null && (
-          <>
-            <p>Approximate Distance: {distance} miles</p>
-            {totalCost && <p>Estimated Cost: £{Math.ceil(totalCost)}</p>}
-          </>
-        )}
       </div>
     </LoadScript>
   );

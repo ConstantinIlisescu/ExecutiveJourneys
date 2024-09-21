@@ -44,9 +44,9 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
           Step <span className="text-call-to-action">three</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
-          Check all the details and view the estimated price. Once submitted, we
-          plan confirm the booking within 2 hours. Please give us a call on
-          07757362364 is you don’t hear from us in this time
+          Check all the details and press back to do any changes. Once
+          submitted, we plan to confirm the booking within 2 hours. Please give
+          us a call on 07757362364 is you don’t hear from us in this time
         </p>
       </div>
     </div>

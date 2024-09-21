@@ -23,15 +23,15 @@ export const FORM_STEP_SCHEMA: {
         .min(2, "Last name must be at least 2 characters")
         .required("Last name is required"),
     },
-    bookingType: {
-      label: "Booking Type",
-      type: "radio",
-      validation: yup
-        .string()
-        .oneOf(["Personal", "Business"])
-        .required("Booking type is required"),
-      options: ["Personal", "Business"],
-    },
+    // bookingType: {
+    //   label: "Booking Type",
+    //   type: "radio",
+    //   validation: yup
+    //     .string()
+    //     .oneOf(["Personal", "Business"])
+    //     .required("Booking type is required"),
+    //   options: ["Personal", "Business"],
+    // },
     email: {
       label: "Email",
       placeholder: "Enter your email",
@@ -75,11 +75,15 @@ export const FORM_STEP_SCHEMA: {
     },
   },
   3: {
-    test: {
-      label: "test",
-      placeholder: "test",
-      type: "text",
-      validation: yup.string().min(2, "2").required("Is required"),
+    confirmIsValidData: {
+      type: "radio",
+      validation: yup
+        .string()
+        .oneOf(["Confirm the data is correct."])
+        .required(
+          "Please check the data and tick the box to confirm the data is correct"
+        ),
+      options: ["Confirm the data is correct."],
     },
   },
   // Add schemas for other steps as needed
