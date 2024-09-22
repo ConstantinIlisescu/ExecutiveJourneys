@@ -61,17 +61,29 @@ export const FORM_STEP_SCHEMA: {
     },
   },
   2: {
-    whereTo: {
+    // pickUpDate: {
+    //   label: "Pickup date",
+    //   placeholder: "Enter the pick up date",
+    //   type: "pickupDate",
+    //   validation: yup.date().required("Date is required"),
+    // },
+    // pickUptime: {
+    //   label: "Pickup time",
+    //   placeholder: "Enter the pick up time",
+    //   type: "pickupTime",
+    //   validation: yup.string().required("Time is required"),
+    // },
+    whereFrom: {
       label: "Where from",
       placeholder: "Enter your pick up address",
       type: "pickup",
-      validation: yup.string().required("Is required"),
+      validation: yup.string().required("Pick up location is required"),
     },
-    whereFrom: {
+    whereTo: {
       label: "Where to",
       placeholder: "Enter your destination address",
       type: "dropOff",
-      validation: yup.string().required("Is required"),
+      validation: yup.string().required("Destination address is required"),
     },
   },
   3: {

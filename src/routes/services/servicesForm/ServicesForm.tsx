@@ -8,6 +8,8 @@ import { calculateCost, getValidationSchema } from "@/lib/formUtils";
 import { FORM_STEP_SCHEMA } from "@/constants/jsonForms";
 import { FormData, FormSchema } from "@/types/FormTypes";
 import { GOOGLE_API_LIBRARIES } from "@/constants/googleApi";
+import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
 
 interface ServicesFormProp {
   stepNumber: number;
@@ -22,21 +24,57 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(getValidationSchema(stepNumber)),
   });
 
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData | null>(null);
   const [pickup, setPickup] = useState<Place | null>(null);
   const [dropOff, setDropOff] = useState<Place | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+
+  //emailjs ids:
+  const serviceId = "service_ih7p24h";
+  const templateId = "template_0e5yrig";
+  const publicKey = "Noga7XMCVjKynSSFL";
 
   // Refs to hold the Autocomplete instances
 
   useEffect(() => {
     calculateDistance();
   }, [pickup, dropOff]);
+
+  const sendEmail = (data: FormData) => {
+    let totalCost = null;
+
+    if (distance) {
+      totalCost = calculateCost(distance);
+    }
+
+    //emailjs dinamic template params
+    const templateParams = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      contactNumber: data.contactNumber,
+      whereFrom: data.whereFrom,
+      whereTo: data.whereTo,
+      distance: distance,
+      cost: totalCost,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+      (response) => {
+        console.log("SUCCESS!", response);
+      },
+      (error) => {
+        console.log("FAILED...", error.text);
+      }
+    );
+  };
 
   const calculateDistance = () => {
     if (pickup && dropOff) {
@@ -61,11 +99,6 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     }
   };
 
-  let totalCost = null;
-
-  if (distance) {
-    totalCost = calculateCost(distance);
-  }
   const pickupAutocompleteRef = useRef<google.maps.places.Autocomplete | null>(
     null
   );
@@ -98,6 +131,9 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       setStepNumber(3); // Move to the final step
     } else {
       console.log("Final data:", data);
+      sendEmail(data);
+      reset();
+      navigate("/");
       // Submit the form data
     }
   };
@@ -234,12 +270,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             <p className=" montserrat-medium text-start max-w-sm mb-1">
               {formData.whereTo}
             </p>
-            {distance !== null && (
-              <>
-                <p>Approximate Distance: {distance} miles</p>
-                {totalCost && <p>Estimated Cost: £{Math.ceil(totalCost)}</p>}
-              </>
-            )}
+            {distance !== null && <p>Approximate Distance: {distance} miles</p>}
           </div>
         )}
 

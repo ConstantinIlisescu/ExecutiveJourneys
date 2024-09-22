@@ -3,13 +3,13 @@ import * as yup from "yup";
 export interface FormData {
   firstName?: string;
   lastName?: string;
-  // bookingType?: "Personal" | "Business";
   email?: string;
   confirmEmail?: string;
   contactNumber?: string;
+  pickUpDate?: string;
+  pickUpTime?: string;
   whereFrom?: string;
   whereTo?: string;
-  distance?: number;
 }
 
 export interface FormSchema {

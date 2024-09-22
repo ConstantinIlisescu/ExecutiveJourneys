@@ -16,3 +16,5 @@ export const calculateCost = (distance: number) => {
   const ratePerKm = 2; // Example rate, customize as needed
   return distance ? distance * ratePerKm : 0;
 };
+
+
