@@ -60,6 +60,8 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       lastName: data.lastName,
       email: data.email,
       contactNumber: data.contactNumber,
+      pickUpDate: data.pickUpDate,
+      pickUpTime: data.pickUpTime,
       whereFrom: data.whereFrom,
       whereTo: data.whereTo,
       distance: distance,
@@ -235,6 +237,44 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             )}
           </div>
         );
+      case "pickUpDate":
+        return (
+          <div className="mb-4" key={name}>
+            <label className="block mb-2 ">{field.label}</label>
+            <input
+              type="date"
+              {...register(name as keyof FormData)}
+              className={`rounded-lg p-2 w-full ${
+                name.length != 0 ? "text-dark" : ""
+              }`}
+              placeholder={field.placeholder}
+            />
+            {errors[name as keyof FormData] && (
+              <p className="text-red-500">
+                {errors[name as keyof FormData]?.message as string}
+              </p>
+            )}
+          </div>
+        );
+      case "pickUpTime":
+        return (
+          <div className="mb-4" key={name}>
+            <label className="block mb-2 ">{field.label}</label>
+            <input
+              type="time"
+              {...register(name as keyof FormData)}
+              className={`rounded-lg p-2 w-full ${
+                name.length != 0 ? "text-dark" : ""
+              }`}
+              placeholder={field.placeholder}
+            />
+            {errors[name as keyof FormData] && (
+              <p className="text-red-500">
+                {errors[name as keyof FormData]?.message as string}
+              </p>
+            )}
+          </div>
+        );
       default:
         return null;
     }
@@ -256,19 +296,25 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
         {stepNumber === 3 && formData && (
           <div className="my-6">
             <p className=" montserrat-medium text-start max-w-sm mb-1">
-              {formData.firstName} {formData.lastName}
+              Full name: {formData.firstName} {formData.lastName}
             </p>
             <p className=" montserrat-medium text-start max-w-sm mb-1">
-              {formData.email}
+              Email: {formData.email}
             </p>
             <p className=" montserrat-medium text-start max-w-sm mb-1">
-              {formData.contactNumber}
+              Tel: {formData.contactNumber}
             </p>
             <p className=" montserrat-medium text-start max-w-sm mb-1">
-              {formData.whereFrom}
+              Pick up date: {formData.pickUpDate?.toLocaleDateString()}
             </p>
             <p className=" montserrat-medium text-start max-w-sm mb-1">
-              {formData.whereTo}
+              Pick up time: {formData.pickUpTime}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              Pick up address: {formData.whereFrom}
+            </p>
+            <p className=" montserrat-medium text-start max-w-sm mb-1">
+              Drop off address: {formData.whereTo}
             </p>
             {distance !== null && <p>Approximate Distance: {distance} miles</p>}
           </div>

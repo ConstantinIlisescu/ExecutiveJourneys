@@ -6,7 +6,7 @@ export interface FormData {
   email?: string;
   confirmEmail?: string;
   contactNumber?: string;
-  pickUpDate?: string;
+  pickUpDate?: Date;
   pickUpTime?: string;
   whereFrom?: string;
   whereTo?: string;
