@@ -9,8 +9,8 @@ const HomeAbout = () => {
             At <span className="text-call-to-action">Executive Journeys</span>,
             we have a passion for what we do and will go above and beyond to
             ensure we get it
-            <span className="text-call-to-action">right</span> the first time,
-            <span className="text-call-to-action">every time</span>.
+            <span className="text-call-to-action"> right</span> the first time,
+            <span className="text-call-to-action"> every time</span>.
           </h2>
           <p className="text-lg montserrat-medium">
             As a proud, family-run business, we extend our familial values to
