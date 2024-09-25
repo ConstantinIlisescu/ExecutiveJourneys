@@ -2,6 +2,7 @@ import { useState } from "react";
 import ServicesHero from "./ServicesHero/ServicesHero";
 import ServicesSteps from "./servicesSteps/ServicesSteps";
 import ServicesForm from "./servicesForm/ServicesForm";
+import Footer from "../home/homeFooter/Footer";
 
 const Services = () => {
   const [stepNumber, setStepNumber] = useState<number>(1);
@@ -14,6 +15,8 @@ const Services = () => {
         <ServicesSteps stepNumber={stepNumber} />
         <ServicesForm stepNumber={stepNumber} setStepNumber={setStepNumber} />
       </div>
+      <div className="my-20"></div>
+      <Footer />
     </div>
   );
 };
