@@ -15,9 +15,9 @@ const Footer = () => {
             <span className="montserrat-medium text-light">Contact info: </span>
             <a
               className="hover:opacity-50 transition-all text-call-to-action"
-              href="mailto:ionugabi@yahoo.co.uk"
+              href="mailto:executivejourneys@yahoo.com"
             >
-              ionugabi@yahoo.co.uk
+              executivejourneys@yahoo.com
             </a>
             <span className="hidden text-light md:block">|</span>
             <a
