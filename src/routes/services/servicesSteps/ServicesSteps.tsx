@@ -46,7 +46,7 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
         <p className=" montserrat-medium text-start max-w-lg">
           Check all the details and press back to do any changes. Once
           submitted, we plan to confirm the booking within 2 hours. Please give
-          us a call on 07757362364 is you don’t hear from us in this time
+          us a call on 07916 186 677 is you don’t hear from us in this time.
         </p>
       </div>
     </div>
