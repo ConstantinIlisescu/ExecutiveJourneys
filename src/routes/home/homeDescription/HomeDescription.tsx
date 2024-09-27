@@ -11,8 +11,8 @@ const HomeDescription = () => {
       <Container className=" flex flex-col items-left justify-end text-center px-4 pt-28 relative z-10">
         <h2 className="max-w-xs md:max-w-md text-2xl text-light text-start playfair-display-medium mb-6">
           We manage your transport needs. Book a chauffeur anywhere in{" "}
-          <span className="text-call-to-action">UK</span> , we’ll manage the
-          rest.
+          <span className="text-call-to-action">UK</span> , we TAKE CARE OF THE
+          REST.
         </h2>
         <p className="text-lg montserrat-medium text-light text-start max-w-lg">
           We endeavour to provide a seamless journey wherever you might be

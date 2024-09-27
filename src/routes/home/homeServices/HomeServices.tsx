@@ -11,9 +11,8 @@ const HomeServices = () => {
             </h3>
             <p className="text-lg">
               Luxury transportation with professional chauffeurs for VIPs,
-              ensuring comfort,{" "}
-              <span className="text-call-to-action">privacy</span>, and
-              impeccable service.
+              ensuring <span className="text-call-to-action">PRIVACY</span> and
+              comfort at the highest standards.
             </p>
           </div>
           <img
@@ -33,11 +32,11 @@ const HomeServices = () => {
           />
           <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
-              <span className="text-call-to-action">Business</span> chauffeurs
+              <span className="text-call-to-action">Corporate</span> travel
             </h3>
             <p className="text-lg">
-              Executive car hire with skilled chauffeurs, ideal for business
-              meetings and corporate events.
+              Business trips for meetings, conferences, or client visits? Let us
+              ensure the punctuality and comfort for your next journey.
             </p>
           </div>
         </div>
@@ -47,11 +46,14 @@ const HomeServices = () => {
         <div className="flex flex-col md:flex-row md:justify-end">
           <div className="flex flex-col mx-auto justify-center py-11 md:text-end max-w-xs text-light md:me-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
-              <span className="text-call-to-action">Wedding</span> chauffeurs
+              <span className="text-call-to-action">Weddings</span> and <br />
+              special occasions
             </h3>
             <p className="text-lg">
-              Elegant wedding car hire with professional chauffeurs, adding a
-              touch of class to your special day.
+              Our chauffeur service will ensure that your special day will be
+              unforgettable. Enjoy luxurious, reliable transportation with a
+              professional driver who provides elegant, punctual, attentive
+              service, seamlessly enhancing your special occasion experience.
             </p>
           </div>
           <img
@@ -71,11 +73,14 @@ const HomeServices = () => {
           />
           <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
-              <span className="text-call-to-action">Airport</span> chauffeurs
+              <span className="text-call-to-action">Airport</span> transfers
             </h3>
             <p className="text-lg">
-              Prompt and reliable airport transfers with chauffeurs, ensuring a
-              seamless and stress-free travel experience.
+              Experience seamless travel with our chauffeur airport transfer
+              service. Enjoy luxury, comfort, and punctuality as our
+              professional drivers ensure you reach your destination on time.
+              Effortless, stress-free travel begins here. Book now for an
+              unparalleled airport transfer experience.
             </p>
           </div>
         </div>

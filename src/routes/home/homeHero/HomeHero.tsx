@@ -18,7 +18,7 @@ const HomeHero = () => {
       </Container>
       <Container className="relative z-10 flex flex-col items-left justify-end text-center">
         <h1 className="text-2xl montserrat-medium text-light text-start">
-          Always delivering <br />
+          Always aiming to deliver <br />
           the highest <span className="text-call-to-action">quality</span>{" "}
           service
         </h1>

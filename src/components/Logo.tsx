@@ -9,7 +9,7 @@ const Navbar = () => {
             <span className="text-light text-xl md:text-4xl playfair-display-medium">
               Executive
             </span>
-            <span className="text-call-to-action playfair-display-medium">
+            <span className="text-lg md:text-2xl text-call-to-action playfair-display-medium">
               Journeys
             </span>
           </div>
