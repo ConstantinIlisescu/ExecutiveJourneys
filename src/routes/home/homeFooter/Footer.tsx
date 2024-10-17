@@ -26,22 +26,29 @@ const Footer = () => {
             >
               07916 186 677
             </a>
-          </div>
-          <div className="flex gap-3">
-            <span className="montserrat-medium text-light">Follow</span>
+            <span className="hidden text-light md:block">|</span>
             <a
-              className="flex items-center justify-center single-media hover:opacity-50 transition-all"
+              className=" flex items-center hover:opacity-50 transition-all text-call-to-action"
               href="https://wa.me/00447916186677"
               target="_blank"
             >
-              <svg width="17.117" height="17.118" viewBox="0 0 32 32">
+              <svg
+                className="me-1"
+                width="17.117"
+                height="17.118"
+                viewBox="0 0 32 32"
+              >
                 <path
                   d="M16.001 0C7.161 0 0 7.161 0 16.001c0 2.818.739 5.474 2.048 7.784L.107 30.929c-.169.575.384 1.127.96.959l7.154-1.937A15.936 15.936 0 0016.001 32c8.84 0 16-7.161 16-15.999S24.841 0 16.001 0zm9.31 22.992c-.395 1.111-2.007 2.111-3.268 2.334-.871.147-1.989.269-5.767-1.228-4.832-2.001-7.905-6.906-8.149-7.228-.245-.322-1.943-2.589-1.943-4.94 0-2.351 1.228-3.51 1.661-3.995.434-.485.947-.611 1.265-.611.316 0 .631.003.907.016.29.014.68-.109 1.063.807.395.927 1.351 3.156 1.469 3.386.118.23.197.512.039.832-.157.321-.236.514-.474.788-.237.275-.503.614-.719.826-.241.235-.494.489-.214.963.279.473 1.236 2.036 2.654 3.297 1.83 1.627 3.356 2.137 3.85 2.372.493.236.773.196 1.063-.118.291-.315 1.228-1.425 1.556-1.918.33-.493.659-.422.988-.321.328.102 2.069.975 2.424 1.152.355.177.593.269.683.421.087.151.087.872-.309 1.983z"
                   transform="translate(0 0)"
                   fill="rgb(212, 175, 55)"
                 />
               </svg>
+              WhatsApp
             </a>
+          </div>
+          <div className="flex gap-3">
+            <span className="montserrat-medium text-light">Follow</span>
             <a
               className="flex items-center justify-center single-media hover:opacity-50 transition-all"
               href="https://www.instagram.com/executive_journeys"
