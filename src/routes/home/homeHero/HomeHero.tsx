@@ -10,10 +10,16 @@ const HomeHero = () => {
       className="relative h-[90vh] bg-cover bg-center flex flex-col justify-between py-4"
     >
       <div className="absolute inset-0 hero-overlay"></div>
-      <Container className="relative z-10 ">
+      <div className="fixed top-6 w-full z-20">
+        <Container>
+          <div className="flex justify-end align-middle items-center">
+            <Button children="Quick Quote" href="/quote" />
+          </div>
+        </Container>
+      </div>
+      <Container className="z-10">
         <div className="flex justify-between align-middle items-center">
           <Logo />
-          <Button children="Quick Quote" href="/quote" />
         </div>
       </Container>
       <Container className="relative z-10 flex flex-col items-left justify-end text-center">
