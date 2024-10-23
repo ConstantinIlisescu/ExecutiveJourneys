@@ -1,6 +1,9 @@
 import { FormSchema } from "@/types/FormTypes";
 import * as yup from "yup";
 
+export const serviceTypeHourly = "Hourly Rental (3 hours minimum)";
+export const serviceTypeByDistance = "By distance";
+
 export const FORM_STEP_SCHEMA: {
   [key: number]: { [key: string]: FormSchema };
 } = {
@@ -23,15 +26,15 @@ export const FORM_STEP_SCHEMA: {
         .min(2, "Last name must be at least 2 characters")
         .required("Last name is required"),
     },
-    // bookingType: {
-    //   label: "Booking Type",
-    //   type: "radio",
-    //   validation: yup
-    //     .string()
-    //     .oneOf(["Personal", "Business"])
-    //     .required("Booking type is required"),
-    //   options: ["Personal", "Business"],
-    // },
+    serviceType: {
+      label: "Select Service type",
+      type: "radio",
+      validation: yup
+        .string()
+        .oneOf([serviceTypeHourly, serviceTypeByDistance])
+        .required("Please select one service Type"),
+      options: [serviceTypeHourly, serviceTypeByDistance],
+    },
     email: {
       label: "Email",
       placeholder: "Enter your email",
@@ -60,6 +63,25 @@ export const FORM_STEP_SCHEMA: {
         .required("Contact number is required"),
     },
   },
+  2: {},
+  3: {
+    confirmIsValidData: {
+      type: "radio",
+      validation: yup
+        .string()
+        .oneOf(["Confirm the data is correct."])
+        .required(
+          "Please check the data and tick the box to confirm the data is correct"
+        ),
+      options: ["Confirm the data is correct."],
+    },
+  },
+  // Add schemas for other steps as needed
+};
+
+export const FORM_STEP_SCHEMA_BY_DISTANCE: {
+  [key: number]: { [key: string]: FormSchema };
+} = {
   2: {
     pickUpDate: {
       label: "Pickup date",
@@ -86,17 +108,39 @@ export const FORM_STEP_SCHEMA: {
       validation: yup.string().required("Destination address is required"),
     },
   },
-  3: {
-    confirmIsValidData: {
-      type: "radio",
+};
+
+export const FORM_STEP_SCHEMA_HOURLY: {
+  [key: number]: { [key: string]: FormSchema };
+} = {
+  2: {
+    pickUpDate: {
+      label: "Pickup date",
+      placeholder: "Enter the pick up date",
+      type: "pickUpDate",
+      validation: yup.date().required("Date is required"),
+    },
+    pickUpTime: {
+      label: "Pickup time",
+      placeholder: "Enter the pick up time",
+      type: "pickUpTime",
+      validation: yup.string().required("Time is required"),
+    },
+    numberOfHours: {
+      label: "Number of hours",
+      placeholder: "Enter the number of hours",
+      type: "numberOfHours",
       validation: yup
-        .string()
-        .oneOf(["Confirm the data is correct."])
-        .required(
-          "Please check the data and tick the box to confirm the data is correct"
-        ),
-      options: ["Confirm the data is correct."],
+        .number()
+        .required("Number of hours is required")
+        .min(3, "The number must be at least 3")
+        .typeError("You must enter a valid number"),
+    },
+    whereFrom: {
+      label: "Where from",
+      placeholder: "Enter your pick up address",
+      type: "pickup",
+      validation: yup.string().required("Pick up location is required"),
     },
   },
-  // Add schemas for other steps as needed
 };

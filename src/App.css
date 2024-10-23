@@ -44,3 +44,10 @@
 .bg-call-to-action {
   background-color: rgb(var(--call-to-action-color));
 }
+
+.modal-center {
+  z-index: 100;
+  position: fixed;
+  inset: 0px;
+  margin: auto;
+}

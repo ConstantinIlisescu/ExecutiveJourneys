@@ -1,0 +1,23 @@
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 1s linear infinite;
+}
+
+
+.border-muted-gold {
+  border-top-color: rgba(var(--call-to-action-color), 0.4);
+  border-bottom-color: rgba(var(--call-to-action-color), 0.4);
+}
+
+.border-gold{
+    border-top-color: rgba(var(--call-to-action-color));
+  border-bottom-color: rgba(var(--call-to-action-color));
+}

@@ -6,7 +6,6 @@ import Footer from "../home/homeFooter/Footer";
 
 const Services = () => {
   const [stepNumber, setStepNumber] = useState<number>(1);
-  console.log(stepNumber);
 
   return (
     <div className="bg-dark text-light">
