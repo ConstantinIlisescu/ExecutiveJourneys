@@ -120,8 +120,8 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     }
   };
 
-  const handleOnChange = (e) => {
-    const { name, value } = e.target;
+  const handleOnChange: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const { name, value } = e.target as HTMLInputElement;
     setFormData({
       ...formData,
       [name]: value, // Update only the specific field that changed
