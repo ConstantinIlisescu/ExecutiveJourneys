@@ -8,7 +8,6 @@
   --light-paragraph-text: 224, 224, 224;
   --dark-paragraph-text: 51, 51, 51;
 }
-
 .text-light {
   color: rgb(var(--light-paragraph-text));
 }

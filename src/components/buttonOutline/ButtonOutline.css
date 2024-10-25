@@ -1,0 +1,14 @@
+.button-outline-bg-primary {
+  border: 1px solid rgb(var(--call-to-action-color));
+  color: rgb(var(--call-to-action-color));
+}
+
+.button-outline-bg-primary:hover {
+  background-color: rgba(var(--call-to-action-color));
+  color: rgb(var(--text-light));
+}
+
+.button-outline-bg-primary-muted {
+  background-color: rgba(var(--call-to-action-color), 0.5);
+  color: rgb(var(--light-color));
+}

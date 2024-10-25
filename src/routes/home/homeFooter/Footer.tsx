@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="h-[1px] bg-gray-600"></div>
         <div className="flex flex-col gap-4 md:flex-row justify-between py-7">
           <div className="flex flex-col gap-2 md:flex-row ">
-            <span className="montserrat-medium text-light">Contact info: </span>
+            <span className="montserrat-medium text-light">Contact us: </span>
             <a
               className="hover:opacity-50 transition-all text-call-to-action"
               href="mailto:executivejourneys@yahoo.com"
@@ -24,7 +24,7 @@ const Footer = () => {
               className="hover:opacity-50 transition-all text-call-to-action"
               href="tel:00447916186677"
             >
-              07916 186 677
+              +447916 186 677
             </a>
             <span className="hidden text-light md:block">|</span>
             <a
@@ -48,7 +48,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex gap-3">
-            <span className="montserrat-medium text-light">Follow</span>
+            <span className="montserrat-medium text-light">Follow us: </span>
             <a
               className="flex items-center justify-center single-media hover:opacity-50 transition-all"
               href="https://www.instagram.com/executive_journeys"

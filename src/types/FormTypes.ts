@@ -4,6 +4,7 @@ export interface FormData {
   firstName?: string;
   lastName?: string;
   email?: string;
+  fleetType?: string;
   serviceType?: string;
   confirmEmail?: string;
   contactNumber?: string;

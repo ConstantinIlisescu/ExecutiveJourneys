@@ -385,6 +385,10 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
               <p>{formData.contactNumber}</p>
             </div>
             <div className="flex justify-between max-w-sm mb-1 montserrat-medium">
+              <p className="w-44">Fleet type:</p>
+              <p className="text-end">{formData.fleetType}</p>
+            </div>
+            <div className="flex justify-between max-w-sm mb-1 montserrat-medium">
               <p className="w-44">Service Type:</p>
               <p className="text-end">{formData.serviceType}</p>
             </div>

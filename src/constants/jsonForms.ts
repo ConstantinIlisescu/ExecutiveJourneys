@@ -26,6 +26,15 @@ export const FORM_STEP_SCHEMA: {
         .min(2, "Last name must be at least 2 characters")
         .required("Last name is required"),
     },
+    fleetType: {
+      label: "Select Fleet type (more coming soon)",
+      type: "radio",
+      validation: yup
+        .string()
+        .oneOf(["Executive class"])
+        .required("Please select one service Type"),
+      options: ["Executive class"],
+    },
     serviceType: {
       label: "Select Service type",
       type: "radio",

@@ -1,0 +1,4 @@
+.muted-outline-bg-primary {
+  border: 1px solid rgba(var(--call-to-action-color), 0.3);
+  color: rgba(var(--call-to-action-color), 0.3);
+}
