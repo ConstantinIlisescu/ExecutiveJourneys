@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, ReactNode } from "react";
+import './AnimatedDiv.css'
 
 interface AnimatedDivProps {
   children: ReactNode; // Type for children prop
@@ -28,7 +29,7 @@ const AnimatedDiv: React.FC<AnimatedDivProps> = ({
   }, []);
 
   return (
-    <div ref={ref} className={` ${isVisible ? animationName : ""} `}>
+    <div ref={ref} className={`initial-position ${isVisible ? animationName : ""} `}>
       {children} {/* Render the children passed to the component */}
     </div>
   );
