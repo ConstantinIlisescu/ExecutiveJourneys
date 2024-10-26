@@ -1,6 +1,7 @@
 import Container from "@/components/ui/container";
 import "./HomeDescription.css";
 import globeImg from "../../../../public/images/desktop/globe.png";
+import AnimatedDiv from "@/components/animations/AnimatedDiv";
 const HomeDescription = () => {
   return (
     <section
@@ -20,12 +21,14 @@ const HomeDescription = () => {
           relax knowing you’re in the safest of hands with{" "}
           <span className="text-call-to-action">Executive Journeys.</span>
         </p>
-        <h3
-          id="services"
-          className="text-2xl playfair-display-medium text-call-to-action py-20 text-start"
-        >
-          Your journey begins here…
-        </h3>
+        <AnimatedDiv animationName="animate-fade-in-bottom-fast">
+          <h3
+            id="services"
+            className="text-2xl playfair-display-medium text-call-to-action py-20 text-start"
+          >
+            Your journey begins here…
+          </h3>
+        </AnimatedDiv>
       </Container>
     </section>
   );

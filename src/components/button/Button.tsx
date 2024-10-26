@@ -11,10 +11,6 @@ const Button = ({ href = "/", children }: ButtonProps) => {
       to={href}
       className="button-bg-primary text-nowrap  rounded-full px-4 py-3 text-lg md:text-xl md:px-10  shadow-lg h-fit"
     >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
       {children}
     </Link>
   );
