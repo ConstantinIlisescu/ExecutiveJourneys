@@ -16,7 +16,7 @@ const FloatingMenu = () => {
           <Accordion
             type="single"
             collapsible
-            className="max-w-[350px] bg-light-dark py-1 px-2 rounded-3xl"
+            className="max-w-[350px] bg-light-dark p-2 rounded-3xl"
           >
             <AccordionItem value="item-1">
               <div className="flex justify-between">
