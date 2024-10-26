@@ -4,7 +4,7 @@ const HomeServices = () => {
   return (
     <section className=" flex flex-col">
       <div className=" bg-dark ">
-        <div className="flex flex-col md:flex-row md:justify-end">
+        <div className="flex flex-col md:flex-row md:justify-end items-center">
           <div className="flex flex-col mx-auto justify-center py-11 md:text-end max-w-xs text-light md:me-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
               <span className="text-call-to-action">VIP</span> chauffeurs
@@ -18,17 +18,17 @@ const HomeServices = () => {
           <img
             src="images/desktop/vip-car-open.png"
             alt=""
-            className="md:w-[50vw] round-corner-left-bottom"
+            className="object-cover h-full w-full md:max-w-[50vw] round-corner-left-bottom"
           />
         </div>
       </div>
 
       <div className="bg-light-dark">
-        <div className="flex flex-col-reverse md:flex-row md:justify-start">
+        <div className="flex flex-col-reverse md:flex-row md:justify-start items-center">
           <img
             src="images/desktop/business.jpg"
             alt=""
-            className="md:w-[50vw] round-corner-right-top round-corner-right-bottom"
+            className="object-cover h-full w-full md:max-w-[50vw] round-corner-right-top round-corner-right-bottom"
           />
           <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
@@ -43,7 +43,7 @@ const HomeServices = () => {
       </div>
 
       <div className=" bg-dark ">
-        <div className="flex flex-col md:flex-row md:justify-end">
+        <div className="flex flex-col md:flex-row md:justify-end items-center">
           <div className="flex flex-col mx-auto justify-center py-11 md:text-end max-w-xs text-light md:me-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
               <span className="text-call-to-action">Weddings</span> and <br />
@@ -59,17 +59,17 @@ const HomeServices = () => {
           <img
             src="images/desktop/wedding.jpg"
             alt=""
-            className="md:w-[50vw] round-corner-left-bottom round-corner-left-top "
+            className="object-cover h-full w-full md:max-w-[50vw]  round-corner-left-bottom round-corner-left-top "
           />
         </div>
       </div>
 
       <div className="bg-light-dark">
-        <div className="flex flex-col-reverse md:flex-row md:justify-start">
+        <div className="flex flex-col-reverse md:flex-row md:justify-start items-center">
           <img
             src="images/desktop/airport.png"
             alt=""
-            className="md:w-[50vw] round-corner-right-top"
+            className="object-cover h-full w-full md:max-w-[50vw] round-corner-right-top"
           />
           <div className="flex flex-col mx-auto py-11 justify-center text-start max-w-xs text-light md:ms-10">
             <h3 className="text-3xl  playfair-display-medium mb-6">
