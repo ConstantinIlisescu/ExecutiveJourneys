@@ -12,7 +12,7 @@ const HomeHero = () => {
       <div className="absolute inset-0 hero-overlay"></div>
       <FloatingMenu />
       <Container className="z-10">
-        <div className="flex justify-between align-middle items-center">
+        <div className="pt-3  md:pt-0 flex justify-between align-middle items-center">
           <Logo />
         </div>
       </Container>
