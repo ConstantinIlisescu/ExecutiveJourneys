@@ -31,9 +31,9 @@ export const FORM_STEP_SCHEMA: {
       type: "radio",
       validation: yup
         .string()
-        .oneOf(["Executive class"])
+        .oneOf(["Business class"])
         .required("Please select one service Type"),
-      options: ["Executive class"],
+      options: ["Business class"],
     },
     serviceType: {
       label: "Select Service type",

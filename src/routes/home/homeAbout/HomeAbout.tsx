@@ -6,23 +6,31 @@ const HomeAbout = () => {
       <Container>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl  playfair-display-medium mb-8">
-            At <span className="text-call-to-action">Executive Journeys</span>,
-            we have a passion for what we do and will go above and beyond to
-            ensure we get it
-            <span className="text-call-to-action"> right</span> the first time,
-            <span className="text-call-to-action"> every time</span>.
+            Welcome to{" "}
+            <span className="text-call-to-action">Executive Journeys</span>
           </h2>
-          <p className="text-lg montserrat-medium">
-            As a proud, family-run business, we extend our familial values to
-            every aspect of our service. Our commitment to treating our clients
-            and team members like family forms the cornerstone of our
-            operations. This family ethos underpins everything we do, ensuring
-            that our dedication, care, and attention to detail are reflected in
-            every journey. With us, you can expect personalized service,
-            unwavering reliability, and the warm, welcoming touch that only a
-            family-run business can provide. Let us make every trip a memorable
-            experience, where you feel valued, comfortable, and truly taken care
-            of.
+          <p className="text-lg montserrat-medium mb-4">
+            We understand that travel is more than just reaching a destination
+            —it’s about the experience along the way. Whether you’re heading to
+            a crucial business meeting, catching a flight, or celebrating a
+            special occasion, we are here to ensure that your journey is
+            comfortable, safe, and stylish.
+          </p>
+          <p className="text-lg montserrat-medium mb-4">
+            Our dedicated team of professional chauffeurs is committed to
+            providing you with the highest level of service.You can relax and
+            enjoy the ride, knowing that every detail has been taken care of.
+          </p>
+          <p className="text-lg montserrat-medium mb-8">
+            We appreciate your trust in us and look forward to serving you. Feel
+            free to reach out with any questions or to book your next journey.
+          </p>
+          <p className="text-lg montserrat-medium w-fit mx-auto">
+            Thank you for choosing{" "}
+            <span className="text-call-to-action">Executive Journeys</span>
+            <br />
+            —where LUXURY MEETS CONVENIENCE <br />
+            Safe travels, The Executive Journeys Team
           </p>
         </div>
       </Container>

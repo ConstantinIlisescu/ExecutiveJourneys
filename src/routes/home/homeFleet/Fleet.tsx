@@ -4,7 +4,7 @@ import "./Fleet.css";
 
 const Fleet = () => {
   return (
-    <div id='fleet' className="bg-dark text-light pt-24 pb-12">
+    <div id="fleet" className="bg-dark text-light pt-24 pb-12">
       <Container>
         <h2 className="text-3xl text-center playfair-display-medium pb-10">
           Our <span className="text-call-to-action"> Fleet</span>
@@ -28,7 +28,7 @@ const Fleet = () => {
           </div>
           <div className=" flex flex-col items-center">
             <h3 className="playfair-display-medium text-xl">
-              <span className="text-call-to-action">Executive</span> class
+              <span className="text-call-to-action">Business</span> class
             </h3>
 
             <img
@@ -38,7 +38,10 @@ const Fleet = () => {
             />
             <p>Mercedes-Benz E-Class, BMW Series 5 or similar</p>
             <div className="mt-10">
-              <ButtonOutline children="Book Now" href="/quote?fleet_type=executive" />
+              <ButtonOutline
+                children="Book Now"
+                href="/quote?fleet_type=executive"
+              />
             </div>
           </div>
         </div>

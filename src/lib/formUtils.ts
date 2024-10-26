@@ -13,8 +13,6 @@ export const getValidationSchema = (step: number) => {
 };
 
 export const calculateCost = (distance: number) => {
-  const ratePerKm = 2; // Example rate, customize as needed
-  return distance ? distance * ratePerKm : 0;
+  const ratePerMile = 2.3; // Example rate, customize as needed
+  return distance ? distance * ratePerMile : 0;
 };
-
-

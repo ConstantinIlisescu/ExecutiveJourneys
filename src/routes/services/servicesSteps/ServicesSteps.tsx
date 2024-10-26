@@ -31,8 +31,7 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
           Step <span className="text-call-to-action">two</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
-          Some more forms. This will ensure we get all your travel details. Stay
-          assured, everything is confidential, nothing gets save either.
+          This will ensure we get all your travel details.
         </p>
       </div>
       <div
@@ -44,9 +43,9 @@ const ServicesSteps = ({ stepNumber }: ServicesStepProp) => {
           Step <span className="text-call-to-action">three</span>
         </h3>
         <p className=" montserrat-medium text-start max-w-lg">
-          Check all the details and press back to do any changes. Once
-          submitted, we plan to confirm the booking within 2 hours. Please give
-          us a call on 07916 186 677 is you don’t hear from us in this time.
+          Check all the details. Once submitted, we plan to confirm the booking
+          within 2 hours. Please give us a call on +447916 186677 if you don’t
+          hear from us within this time.
         </p>
       </div>
     </div>
