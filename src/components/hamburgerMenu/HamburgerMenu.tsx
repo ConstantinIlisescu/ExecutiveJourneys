@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./HamburgerMenu.css";
 
-const HamburgerMenu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const HamburgerMenu = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(isMenuOpen);
+
+  useEffect(() => {
+    setIsOpen(isMenuOpen);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
