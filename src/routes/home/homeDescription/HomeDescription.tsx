@@ -20,7 +20,10 @@ const HomeDescription = () => {
           relax knowing you’re in the safest of hands with{" "}
           <span className="text-call-to-action">Executive Journeys.</span>
         </p>
-        <h3 className="text-2xl playfair-display-medium text-call-to-action py-20 text-start">
+        <h3
+          id="services"
+          className="text-2xl playfair-display-medium text-call-to-action py-20 text-start"
+        >
           Your journey begins here…
         </h3>
       </Container>

@@ -4,14 +4,16 @@ import Footer from "./homeFooter/Footer";
 import HomeHero from "./homeHero/HomeHero";
 import HomeServices from "./homeServices/HomeServices";
 import Fleet from "./homeFleet/Fleet";
+import useScrollToEffect from "@/utils/hooks/useScrollToEffect";
 
 const Home = () => {
+  useScrollToEffect();
   return (
     <>
       <HomeHero />
       <HomeDescription />
       <HomeServices />
-      <Fleet/>
+      <Fleet />
       <HomeAbout />
       <Footer />
     </>

@@ -17,6 +17,7 @@ import { GOOGLE_API_LIBRARIES } from "@/constants/googleApi";
 import emailjs from "@emailjs/browser";
 import FancyLoader from "@/components/fancyLoader/FancyLoader";
 import Container from "@/components/ui/container";
+import { scrollToHash, scrollToStartPage } from "@/lib/scrolltoHelpers";
 
 interface ServicesFormProp {
   stepNumber: number;
@@ -111,9 +112,11 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     if (stepNumber === 1) {
       setFormData(data);
       setStepNumber(2); // Move to the next step
+      scrollToHash("start-form");
     } else if (stepNumber === 2) {
       setFormData(data);
       setStepNumber(3); // Move to the final step
+      scrollToHash("start-form");
     } else {
       setSubmitDisabled(true);
       sendEmail(data);
@@ -324,6 +327,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
     reset();
     setSubmitDisabled(false);
     setStepNumber(1);
+    scrollToStartPage();
   };
 
   return (
@@ -332,7 +336,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
       libraries={GOOGLE_API_LIBRARIES}
       loadingElement={<div>Loading...</div>}
     >
-      <div className="p-4 w-96 max-w-lg mx-auto">
+      <div id="start-form" className="p-4 w-96 max-w-lg mx-auto">
         <div>
           <h4 className="montserrat-medium text-xs text-light">
             Step {stepNumber} of 3
@@ -418,7 +422,8 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             )}
             {distance !== null && (
               <div className="flex justify-between max-w-sm mb-1 montserrat-medium">
-                <p>Approximate Distance: {distance} miles</p>
+                <p>Approximate Distance:</p>
+                <p>{distance} miles</p>
               </div>
             )}
           </div>

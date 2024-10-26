@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 
 const HomeAbout = () => {
   return (
-    <div className=" bg-dark text-light py-24">
+    <div id="about" className=" bg-dark text-light py-24">
       <Container>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl  playfair-display-medium mb-8">

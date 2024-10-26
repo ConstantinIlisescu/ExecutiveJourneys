@@ -3,8 +3,10 @@ import ServicesHero from "./ServicesHero/ServicesHero";
 import ServicesSteps from "./servicesSteps/ServicesSteps";
 import ServicesForm from "./servicesForm/ServicesForm";
 import Footer from "../home/homeFooter/Footer";
+import useScrollToEffect from "@/utils/hooks/useScrollToEffect";
 
 const Services = () => {
+  useScrollToEffect();
   const [stepNumber, setStepNumber] = useState<number>(1);
 
   return (

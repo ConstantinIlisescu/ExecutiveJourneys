@@ -4,7 +4,7 @@ import "./Fleet.css";
 
 const Fleet = () => {
   return (
-    <div className="bg-dark text-light pt-24 pb-12">
+    <div id='fleet' className="bg-dark text-light pt-24 pb-12">
       <Container>
         <h2 className="text-3xl text-center playfair-display-medium pb-10">
           Our <span className="text-call-to-action"> Fleet</span>

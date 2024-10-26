@@ -2,12 +2,7 @@ import Container from "@/components/ui/container";
 
 const Footer = () => {
   return (
-    <div className="bg-dark">
-      <img
-        src="images/executive-logo.jpg"
-        alt=""
-        className="w-60 rounded-3xl mx-auto mb-16 shadow-lg"
-      />
+    <div id="contact" className="bg-dark">
       <Container>
         <div className="h-[1px] bg-gray-600"></div>
         <div className="flex flex-col gap-4 md:flex-row justify-between py-7">
@@ -134,6 +129,11 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+      <img
+        src="images/executive-logo.jpg"
+        alt=""
+        className="w-60 rounded-3xl mx-auto py-16 shadow-lg"
+      />
     </div>
   );
 };
