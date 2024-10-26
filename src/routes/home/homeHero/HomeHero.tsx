@@ -1,12 +1,30 @@
+import { useState, useEffect } from "react";
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./HomeHero.css";
 import heroImg from "../../../../public/images/desktop/hero-img.jpg";
 import FloatingMenu from "@/components/floatingMenu/FloatingMenu";
 const HomeHero = () => {
+  const [backgroundSize, setBackgroundSize] = useState(100);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const newSize = 100 + scrollTop * 0.1; // Adjust scaling sensitivity
+      setBackgroundSize(newSize);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section
-      style={{ backgroundImage: `url(${heroImg})` }}
+      style={{
+        backgroundImage: `url(${heroImg})`,
+        backgroundSize: `${backgroundSize}%`,
+        transition: "background-size 0.1s ease-out",
+      }}
       className="relative h-[90vh] bg-cover bg-center flex flex-col justify-between py-4"
     >
       <div className="absolute inset-0 hero-overlay"></div>
