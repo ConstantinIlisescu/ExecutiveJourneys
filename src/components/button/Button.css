@@ -1,13 +1,17 @@
 .button-bg-primary {
-  background-color: rgb(var(--call-to-action-color));
+  background: linear-gradient(
+    to right,
+    rgba(var(--call-to-action-color), 1),
+    rgba(var(--call-to-action-color), 1)
+  );
   color: rgb(var(--light-color));
+  transition: background 1s ease-in-out;
 }
 
 .button-bg-primary:hover {
-  background-color: rgba(var(--call-to-action-color));
-}
-
-.button-bg-primary-muted {
-  background-color: rgba(var(--call-to-action-color), 0.5);
-  color: rgb(var(--light-color));
+  background: linear-gradient(
+    to right,
+    rgba(var(--call-to-action-color), 0.8),
+    rgba(var(--call-to-action-color), 0.1)
+  );
 }

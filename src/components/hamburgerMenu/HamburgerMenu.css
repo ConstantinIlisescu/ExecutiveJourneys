@@ -13,7 +13,7 @@
 
 .bar {
   width: 100%;
-  height: 4px;
+  height: 2px;
   transition: transform 0.3s ease, opacity 0.2s ease;
   border-radius: 25px; /* Optional rounded corners */
   background-color: rgb(var(--call-to-action-color));
@@ -25,11 +25,11 @@
 }
 
 .bar-top {
-  top: 25%;
+  top: 20%;
 }
 
 .bar-bottom {
-  top: 75%;
+  top: 80%;
 }
 
 .hamburger-menu.active .bar-top {

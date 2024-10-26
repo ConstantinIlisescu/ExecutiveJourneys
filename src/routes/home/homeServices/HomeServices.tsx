@@ -1,4 +1,5 @@
 import "./HomeServices.css";
+import ElevateDiv from "@/components/animations/ElevateDiv";
 
 const HomeServices = () => {
   return (

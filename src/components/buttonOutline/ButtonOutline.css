@@ -4,11 +4,27 @@
 }
 
 .button-outline-bg-primary:hover {
-  background-color: rgba(var(--call-to-action-color));
+  background: linear-gradient(
+    to right,
+    rgba(var(--call-to-action-color), 0.8),
+    rgba(var(--call-to-action-color), 0.103)
+  );
+  border: none;
+  animation: flash 2s infinite alternate;
+  transition: all 1s ease-in-out; /* Add transition for smoother return */
   color: rgb(var(--text-light));
 }
 
 .button-outline-bg-primary-muted {
   background-color: rgba(var(--call-to-action-color), 0.5);
   color: rgb(var(--light-color));
+}
+
+@keyframes flash {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
 }
