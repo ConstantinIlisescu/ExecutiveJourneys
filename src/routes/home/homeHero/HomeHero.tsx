@@ -1,8 +1,8 @@
-import Button from "@/components/button/Button";
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./HomeHero.css";
 import heroImg from "../../../../public/images/desktop/hero-img.jpg";
+import FloatingMenu from "@/components/floatingMenu/FloatingMenu";
 const HomeHero = () => {
   return (
     <section
@@ -10,13 +10,7 @@ const HomeHero = () => {
       className="relative h-[90vh] bg-cover bg-center flex flex-col justify-between py-4"
     >
       <div className="absolute inset-0 hero-overlay"></div>
-      <div className="fixed top-6 w-full z-20">
-        <Container>
-          <div className="flex justify-end align-middle items-center">
-            <Button children="Quick Quote" href="/quote" />
-          </div>
-        </Container>
-      </div>
+      <FloatingMenu />
       <Container className="z-10">
         <div className="flex justify-between align-middle items-center">
           <Logo />

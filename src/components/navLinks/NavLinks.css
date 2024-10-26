@@ -1,0 +1,3 @@
+.links-text-color:hover {
+  color: rgb(var(--call-to-action-color));
+}
