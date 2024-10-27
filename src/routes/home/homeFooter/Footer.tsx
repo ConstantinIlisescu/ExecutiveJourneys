@@ -11,6 +11,7 @@ const Footer = () => {
             <a
               className="hover:opacity-50 transition-all text-call-to-action"
               href="mailto:executivejourneys@yahoo.com"
+              aria-label="Contact me on email"
             >
               executivejourneys@yahoo.com
             </a>
@@ -18,6 +19,7 @@ const Footer = () => {
             <a
               className="hover:opacity-50 transition-all text-call-to-action"
               href="tel:00447916186677"
+              aria-label="Contact me on telephone"
             >
               +447916 186 677
             </a>
@@ -26,6 +28,7 @@ const Footer = () => {
               className=" flex items-center hover:opacity-50 transition-all text-call-to-action"
               href="https://wa.me/00447916186677"
               target="_blank"
+              aria-label="Contact me on whatsapp"
             >
               <svg
                 className="me-1"
@@ -48,6 +51,7 @@ const Footer = () => {
               className="flex items-center justify-center single-media hover:opacity-50 transition-all"
               href="https://www.instagram.com/executive_journeys"
               target="_blank"
+              aria-label="Follow me on instagram"
             >
               <svg width="17.117" height="17.118" viewBox="0 0 17.117 17.118">
                 <path
@@ -72,6 +76,7 @@ const Footer = () => {
               className=" flex items-center justify-center single-media hover:opacity-50 transition-all"
               href="https://www.facebook.com/profile.php?id=61561023843773&locale=en_GB"
               target="_blank"
+              aria-label="Follow me on facebook"
             >
               <svg width="10.082" height="18.966" viewBox="0 0 10.082 18.966">
                 <path
