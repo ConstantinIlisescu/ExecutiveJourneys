@@ -50,6 +50,7 @@ const FloatingMenu = () => {
                 <AccordionTrigger
                   isOpen={activeItem === "item-1"}
                   className="ml-10"
+                  aria-label="menu"
                 />
               </div>
               <AccordionContent>
