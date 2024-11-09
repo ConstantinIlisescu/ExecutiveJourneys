@@ -13,9 +13,12 @@ const HamburgerMenu = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
   };
 
   return (
-    <div className="flex gap-2 items-center h-[100%]" onClick={toggleMenu}>
+    <div className="flex gap-2 items-center h-[100%] " onClick={toggleMenu}>
       <span className="text-white montserrat-medium hidden md:block">Menu</span>
-      <div className={`hamburger-menu ${isOpen ? "active" : ""} `}>
+      <div
+        aria-label="menu"
+        className={`hamburger-menu ${isOpen ? "active" : ""} `}
+      >
         <div className="bar bar-top" />
         <div className="bar bar-middle" />
         <div className="bar bar-bottom" />
