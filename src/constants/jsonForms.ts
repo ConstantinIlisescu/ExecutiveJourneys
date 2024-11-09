@@ -3,6 +3,9 @@ import * as yup from "yup";
 
 export const serviceTypeHourly = "Hourly Rental (3 hours minimum)";
 export const serviceTypeByDistance = "By distance";
+// Get today's date as a minimum date
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Sets time to midnight to avoid issues with time zones
 
 export const FORM_STEP_SCHEMA: {
   [key: number]: { [key: string]: FormSchema };
@@ -96,7 +99,10 @@ export const FORM_STEP_SCHEMA_BY_DISTANCE: {
       label: "Pickup date",
       placeholder: "Enter the pick up date",
       type: "pickUpDate",
-      validation: yup.date().required("Date is required"),
+      validation: yup
+        .date()
+        .min(today, "Date cannot be in the past")
+        .required("Date is required"),
     },
     pickUpTime: {
       label: "Pickup time",
@@ -127,7 +133,10 @@ export const FORM_STEP_SCHEMA_HOURLY: {
       label: "Pickup date",
       placeholder: "Enter the pick up date",
       type: "pickUpDate",
-      validation: yup.date().required("Date is required"),
+      validation: yup
+        .date()
+        .min(today, "Date cannot be in the past")
+        .required("Date is required"),
     },
     pickUpTime: {
       label: "Pickup time",

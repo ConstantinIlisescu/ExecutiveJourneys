@@ -46,10 +46,11 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
   const [formSchema, setFormSchema] = useState<{
     [key: number]: { [key: string]: FormSchema };
   }>(FORM_STEP_SCHEMA);
+  const today = new Date().toISOString().split("T")[0];
   //emailjs ids:
-  const serviceId = "service_ih7p24h";
-  const templateId = "template_0e5yrig";
-  const publicKey = "Noga7XMCVjKynSSFL";
+  const serviceId = "ExecutiveJourneys2024";
+  const templateId = "template_k0u413o";
+  const publicKey = "ILFYdBc3TIrNOAD7s";
 
   useEffect(() => {
     if (formData && formData["serviceType"] === serviceTypeHourly) {
@@ -164,6 +165,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
               }`}
               placeholder={field.placeholder}
               type="number"
+              required={true}
               min={3}
             />
             {errors[name as keyof FormData] && (
@@ -213,6 +215,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
                 }`}
                 type="text"
                 placeholder={field.placeholder}
+                required={true}
               />
             </Autocomplete>
             {errors[name as keyof FormData] && (
@@ -239,6 +242,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
                 }`}
                 type="text"
                 placeholder={field.placeholder}
+                required={true}
               />
             </Autocomplete>
             {errors[name as keyof FormData] && (
@@ -254,11 +258,13 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             <label className="block mb-2 ">{field.label}</label>
             <input
               type="date"
+              min={today}
               {...register(name as keyof FormData)}
               className={`rounded-lg p-2 w-full ${
                 name.length != 0 ? "text-dark" : ""
               }`}
               placeholder={field.placeholder}
+              required={true}
             />
             {errors[name as keyof FormData] && (
               <p className="text-red-500">
@@ -278,6 +284,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
                 name.length != 0 ? "text-dark" : ""
               }`}
               placeholder={field.placeholder}
+              required={true}
             />
             {errors[name as keyof FormData] && (
               <p className="text-red-500">
@@ -332,7 +339,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyBAY3CeUohHDliAMOZ0KLPE77qgmOv9Tr0"
+      googleMapsApiKey="AIzaSyBkcvGgxBxPeu7ah7YzYEfTfKbmFEnw1V0"
       libraries={GOOGLE_API_LIBRARIES}
       loadingElement={<div>Loading...</div>}
     >
@@ -343,35 +350,6 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
           </h4>
           <Progress value={stepNumber * 33} />
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} onChange={handleOnChange}>
-          {formSchema[stepNumber] &&
-            Object.keys(formSchema[stepNumber]).map((key) =>
-              renderField(key, formSchema[stepNumber][key])
-            )}
-          <div className="flex flex-row justify-between">
-            <button
-              type="button"
-              onClick={() => setStepNumber(stepNumber - 1)}
-              className={`${
-                stepNumber === 1 || submitDisabled
-                  ? "button-bg-primary-muted"
-                  : "button-bg-primary"
-              } text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit`}
-              disabled={stepNumber === 1 || submitDisabled}
-            >
-              Back
-            </button>
-            <button
-              type="submit"
-              className={`${
-                submitDisabled ? "button-bg-primary-muted" : "button-bg-primary"
-              } text-nowrap  px-10 py-2 rounded-full text-xl  shadow-lg h-fit`}
-              disabled={submitDisabled}
-            >
-              {stepNumber === 3 ? "Submit" : "Next"}
-            </button>
-          </div>
-        </form>
         {stepNumber === 3 && formData && (
           <div className="my-6">
             <div className="flex justify-between max-w-sm mb-2 montserrat-medium text-start ">
@@ -428,6 +406,35 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             )}
           </div>
         )}
+        <form onSubmit={handleSubmit(onSubmit)} onChange={handleOnChange}>
+          {formSchema[stepNumber] &&
+            Object.keys(formSchema[stepNumber]).map((key) =>
+              renderField(key, formSchema[stepNumber][key])
+            )}
+          <div className="flex flex-row justify-between">
+            <button
+              type="button"
+              onClick={() => setStepNumber(stepNumber - 1)}
+              className={`${
+                stepNumber === 1 || submitDisabled
+                  ? "button-bg-primary-muted"
+                  : "button-bg-primary"
+              } text-nowrap  px-10 py-2 rounded-full text-xl shadow-lg h-fit`}
+              disabled={stepNumber === 1 || submitDisabled}
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              className={`${
+                submitDisabled ? "button-bg-primary-muted" : "button-bg-primary"
+              } text-nowrap  px-10 py-2 rounded-full text-xl  shadow-lg h-fit`}
+              disabled={submitDisabled}
+            >
+              {stepNumber === 3 ? "Submit" : "Next"}
+            </button>
+          </div>
+        </form>
       </div>
 
       {/* not always visible elements  */}
