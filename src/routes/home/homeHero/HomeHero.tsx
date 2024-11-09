@@ -1,7 +1,7 @@
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./HomeHero.css";
-import heroImg from "../../../../public/images/desktop/hero-img.jpg";
+import heroImg from "../../../../public/images/desktop/hero-img.webp";
 import FloatingMenu from "@/components/floatingMenu/FloatingMenu";
 const HomeHero = () => {
   return (

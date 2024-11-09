@@ -1,7 +1,7 @@
 import Logo from "@/components/Logo";
 import Container from "@/components/ui/container";
 import "./ServicesHero.css";
-import formHeroImg from "../../../../public/images/desktop/quote-hero-img.jpg";
+import formHeroImg from "../../../../public/images/desktop/quote-hero-img.webp";
 
 const ServicesHero = () => {
   return (

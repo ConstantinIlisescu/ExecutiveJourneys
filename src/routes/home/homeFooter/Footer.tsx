@@ -135,7 +135,7 @@ const Footer = () => {
         </div>
       </Container>
       <img
-        src="images/executive-logo.jpg"
+        src="images/executive-logo.webp"
         alt=""
         className="w-60 rounded-3xl mx-auto py-16 shadow-lg"
       />

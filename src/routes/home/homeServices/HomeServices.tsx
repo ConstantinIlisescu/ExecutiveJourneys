@@ -20,7 +20,7 @@ const HomeServices = () => {
           </AnimatedDiv>
           <AnimatedDiv animationName="animate-fade-in-bottom-fast">
             <img
-              src="images/desktop/vip-car-open.png"
+              src="images/desktop/vip-car-open.webp"
               alt=""
               className="object-cover h-full w-full md:max-w-[50vw] round-corner-left-bottom"
             />
@@ -32,7 +32,7 @@ const HomeServices = () => {
         <div className="flex flex-col-reverse md:flex-row md:justify-start items-center">
           <AnimatedDiv animationName="animate-fade-in-bottom-fast">
             <img
-              src="images/desktop/business.jpg"
+              src="images/desktop/business.webp"
               alt=""
               className="object-cover h-full w-full md:max-w-[50vw] round-corner-right-top round-corner-right-bottom"
             />
@@ -69,7 +69,7 @@ const HomeServices = () => {
           </AnimatedDiv>
           <AnimatedDiv animationName="animate-fade-in-bottom-fast">
             <img
-              src="images/desktop/wedding.jpg"
+              src="images/desktop/wedding.webp"
               alt=""
               className="object-cover h-full w-full md:max-w-[50vw]  round-corner-left-bottom round-corner-left-top "
             />
@@ -81,7 +81,7 @@ const HomeServices = () => {
         <div className="flex flex-col-reverse md:flex-row md:justify-start items-center">
           <AnimatedDiv animationName="animate-fade-in-bottom-fast">
             <img
-              src="images/desktop/airport.png"
+              src="images/desktop/airport.webp"
               alt=""
               className="object-cover h-full w-full md:max-w-[50vw] round-corner-right-top"
             />

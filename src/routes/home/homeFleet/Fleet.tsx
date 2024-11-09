@@ -17,7 +17,7 @@ const Fleet = () => {
                 <span className="text-call-to-action">Luxury</span> class
               </h3>
               <img
-                src="images/desktop/s-class.jpg"
+                src="images/desktop/s-class.webp"
                 alt=""
                 className="md:w-[350px] rounded-3xl py-2"
               />
@@ -34,7 +34,7 @@ const Fleet = () => {
               </h3>
 
               <img
-                src="images/desktop/e-class.jpg"
+                src="images/desktop/e-class.webp"
                 alt=""
                 className="md:w-[350px] rounded-3xl py-2"
               />

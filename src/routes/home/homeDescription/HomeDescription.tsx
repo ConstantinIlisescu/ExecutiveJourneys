@@ -1,6 +1,6 @@
 import Container from "@/components/ui/container";
 import "./HomeDescription.css";
-import globeImg from "../../../../public/images/desktop/globe.png";
+import globeImg from "../../../../public/images/desktop/globe.webp";
 import AnimatedDiv from "@/components/animations/AnimatedDiv";
 const HomeDescription = () => {
   return (
