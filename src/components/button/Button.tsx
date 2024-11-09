@@ -9,6 +9,7 @@ const Button = ({ href = "/", children }: ButtonProps) => {
   return (
     <Link
       to={href}
+      aria-label="Quick quote"
       className="button-bg-primary text-nowrap  rounded-full px-4 py-3 text-lg md:text-xl md:px-10  shadow-lg h-fit"
     >
       {children}

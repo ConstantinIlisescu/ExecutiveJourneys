@@ -415,6 +415,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
             <button
               type="button"
               onClick={() => setStepNumber(stepNumber - 1)}
+              aria-label="Go back"
               className={`${
                 stepNumber === 1 || submitDisabled
                   ? "button-bg-primary-muted"
@@ -430,6 +431,7 @@ const ServicesForm = ({ stepNumber, setStepNumber }: ServicesFormProp) => {
                 submitDisabled ? "button-bg-primary-muted" : "button-bg-primary"
               } text-nowrap  px-10 py-2 rounded-full text-xl  shadow-lg h-fit`}
               disabled={submitDisabled}
+              aria-label={stepNumber === 3 ? "Submit" : "Next"}
             >
               {stepNumber === 3 ? "Submit" : "Next"}
             </button>
